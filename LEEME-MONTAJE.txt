@@ -1,0 +1,43 @@
+NEXUS GM COMPLETA - HOSTING LINUX / WINDOWS
+Preparado el 8 de octubre de 2026. Fuente: GM local actual, no una entrega antigua.
+
+LINUX
+1. Deten el servidor en el panel y sube/descomprime este ZIP en su raiz.
+   server.cfg, mysql.ini y samp03svr deben quedar juntos, no bajo otra carpeta.
+2. Crea una base VACIA y selecciona esa base en phpMyAdmin.
+   Importa database/NEXUS-completa.sql. Contiene esquema y datos actuales,
+   incluidas cuentas, casa guardada, 77 territorios, C4 y sistemas nuevos.
+   No se importan usuarios/permisos de MySQL: usa los asignados por el hosting.
+3. Completa mysql.ini con HOST, USUARIO, CLAVE, BASE y PUERTO de MySQL.
+   No necesitas recompilar. El puerto MySQL no es el puerto del juego.
+4. Ajusta port y maxplayers en server.cfg a lo contratado; conserva maxnpc
+   suficiente para los recorridos y FCNPC (no cero).
+5. Binarios incluidos: SA-MP 0.3.7-R2-1 Linux x86 (32 bits).
+   Mantener esa version compatible con FCNPC; no cambiar a open.mp o DL.
+   chmod +x samp03svr samp-npc iniciar-linux.sh
+   Inicio: sh iniciar-linux.sh
+   Si el panel exige ./samp03svr, configura LD_LIBRARY_PATH con la raiz.
+6. El hosting necesita las bibliotecas Linux de 32 bits enumeradas en
+   DEPENDENCIAS-LINUX.json. En VPS Debian/Ubuntu amd64 el administrador
+   puede instalar libc6:i386 libstdc++6:i386 libgcc-s1:i386 tras habilitar i386.
+7. Arranca y comprueba Loaded en los 8 plugins, conexion MySQL y carga de casas,
+   territorios y grafitis. Los grafitis se registran automaticamente al iniciar.
+
+WINDOWS
+Usa los mismos gamemodes, npcmodes, scriptfiles, filtros y mysql.ini.
+Copia windows/samp-server.exe, samp-npc.exe y las DLL de windows/ a la raiz.
+Copia windows/plugins/*.dll y *.cfg a plugins/. Sustituye server.cfg por
+windows/server.cfg. Ejecuta samp-server.exe. Los plugins adicionales en esa
+carpeta son opcionales; solo los 8 listados en server.cfg son necesarios.
+El AMX con mysql.ini sirve en ambos sistemas. Fuentes y compilador incluidos.
+
+VALIDACION Y ALCANCE
+La GM del paquete se recompila con las ultimas correcciones. ZIP verificado
+por CRC y manifiesto SHA256. Plugins Linux comprobados como ELF32 x86.
+Pruebas previas: C4 10/10, grafitis 47/47. No equivalen a pruebas de juego
+Android/PC ni a arrancar en tu hosting Linux: esas verificaciones quedan alli.
+La exportacion es una copia de los datos existentes al preparar el paquete.
+No vuelvas a importar el SQL completo sobre un servidor ya en uso.
+
+BINARIOS LINUX: archivo historico SA-MP 0.3.7-R2-1:
+https://github.com/ksenonadv/sa-mp-files/blob/master/archives/samp037svr_R2-1.tar.gz

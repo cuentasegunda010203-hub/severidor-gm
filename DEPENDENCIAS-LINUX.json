@@ -1,0 +1,117 @@
+[
+  {
+    "archivo": "plugins/crashdetect.so",
+    "arquitectura": "ELF32 x86",
+    "dependencias": [
+      "libstdc++.so.6",
+      "libgcc_s.so.1",
+      "libpthread.so.0",
+      "libc.so.6"
+    ]
+  },
+  {
+    "archivo": "plugins/FCNPC.so",
+    "arquitectura": "ELF32 x86",
+    "dependencias": [
+      "libm.so.6",
+      "libc.so.6",
+      "ld-linux.so.2"
+    ]
+  },
+  {
+    "archivo": "plugins/GPS.so",
+    "arquitectura": "ELF32 x86",
+    "dependencias": [
+      "libstdc++.so.6",
+      "libm.so.6",
+      "libgcc_s.so.1",
+      "libpthread.so.0",
+      "libc.so.6"
+    ]
+  },
+  {
+    "archivo": "plugins/mysql.so",
+    "arquitectura": "ELF32 x86",
+    "dependencias": [
+      "log-core.so",
+      "librt.so.1",
+      "libstdc++.so.6",
+      "libm.so.6",
+      "libgcc_s.so.1",
+      "libc.so.6",
+      "ld-linux.so.2"
+    ]
+  },
+  {
+    "archivo": "plugins/pawncmd.so",
+    "arquitectura": "ELF32 x86",
+    "dependencias": [
+      "libm.so.6",
+      "libc.so.6",
+      "ld-linux.so.2"
+    ]
+  },
+  {
+    "archivo": "plugins/pawnraknet.so",
+    "arquitectura": "ELF32 x86",
+    "dependencias": [
+      "libm.so.6",
+      "libc.so.6",
+      "ld-linux.so.2"
+    ]
+  },
+  {
+    "archivo": "plugins/sscanf.so",
+    "arquitectura": "ELF32 x86",
+    "dependencias": [
+      "libstdc++.so.6",
+      "libgcc_s.so.1",
+      "libc.so.6"
+    ]
+  },
+  {
+    "archivo": "plugins/streamer.so",
+    "arquitectura": "ELF32 x86",
+    "dependencias": [
+      "libstdc++.so.6",
+      "libm.so.6",
+      "libgcc_s.so.1",
+      "libc.so.6"
+    ]
+  },
+  {
+    "archivo": "log-core.so",
+    "arquitectura": "ELF32 x86",
+    "dependencias": [
+      "librt.so.1",
+      "libstdc++.so.6",
+      "libm.so.6",
+      "libgcc_s.so.1",
+      "libc.so.6"
+    ]
+  },
+  {
+    "archivo": "samp03svr",
+    "arquitectura": "ELF32 x86",
+    "dependencias": [
+      "libdl.so.2",
+      "libpthread.so.0",
+      "libstdc++.so.6",
+      "libm.so.6",
+      "libgcc_s.so.1",
+      "libc.so.6"
+    ]
+  },
+  {
+    "archivo": "samp-npc",
+    "arquitectura": "ELF32 x86",
+    "dependencias": [
+      "libdl.so.2",
+      "libpthread.so.0",
+      "libstdc++.so.6",
+      "libm.so.6",
+      "libgcc_s.so.1",
+      "libc.so.6"
+    ]
+  }
+]
