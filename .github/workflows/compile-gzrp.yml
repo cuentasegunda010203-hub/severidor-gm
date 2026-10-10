@@ -1,0 +1,45 @@
+name: Compilar GZRP
+
+on:
+  push:
+    branches:
+      - refactor/estructura-gzrp
+    paths:
+      - "gamemodes/**"
+      - "pawno/**"
+      - ".github/workflows/compile-gzrp.yml"
+  pull_request:
+    paths:
+      - "gamemodes/**"
+      - "pawno/**"
+      - ".github/workflows/compile-gzrp.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  compile:
+    runs-on: windows-latest
+    timeout-minutes: 10
+    steps:
+      - name: Descargar código
+        uses: actions/checkout@v4
+
+      - name: Compilar GZRP con el compilador incluido
+        shell: pwsh
+        run: |
+          $compiler = Join-Path $PWD "pawno/pawncc.exe"
+          $source = Join-Path $PWD "gamemodes/GZRP.pwn"
+          $output = Join-Path $PWD "gamemodes/GZRP.amx"
+          & $compiler $source "-igamemodes" "-ipawno/include" "-o$output" "-d3"
+          $compileExitCode = $LASTEXITCODE
+          if ($compileExitCode -ne 0) {
+            Write-Error "La compilación de GZRP falló con código $compileExitCode."
+            exit $compileExitCode
+          }
+          if (!(Test-Path $output)) {
+            Write-Error "El compilador terminó sin generar gamemodes/GZRP.amx."
+            exit 1
+          }
+          Write-Host "Compilación finalizada. AMX generado: $output"
