@@ -46,8 +46,11 @@ Esto no demuestra que sean obsoletos: no se deben borrar ni renombrar sin confir
 - [x] RAR recibido y extraído.
 - [x] Inventario y análisis inicial de includes locales.
 - [x] Grafo inicial de dependencias locales.
-- [ ] Migración de código fuente.
+- [x] Primera migración controlada: identidad del servidor a `gamemodes/core/identidad_servidor.p`, conservando un puente en la ruta anterior.
 - [ ] Compilación con el entorno original.
 - [ ] Pruebas funcionales.
 
-**Conclusión:** existe suficiente información para preparar una migración guiada por dependencias, pero no es seguro mover todos los módulos en bloque. La primera tanda debe ser pequeña y verificarse con el entorno de compilación original.
+## Validación de la primera migración
+El archivo `modulos/identidad_servidor.p` contiene únicamente tres definiciones de macros. Su contenido se trasladó sin cambios a `core/identidad_servidor.p`; la ruta antigua ahora incluye la nueva ubicación para no modificar el include inicial de `GZRP.pwn`. Esta migración aún no tiene compilación confirmada.
+
+**Conclusión:** continuar por tandas pequeñas, sin mover módulos dependientes hasta validar compilación y revisar cada diff.
