@@ -31,4 +31,4 @@ Antes de cualquier movimiento real:
 4. Mover un grupo pequeño, ajustar solo rutas necesarias y compilar de nuevo.
 5. Mantener el archivo original y comparar el comportamiento antes de seguir.
 
-**Estado real:** rama de trabajo y documentación creadas. Ningún archivo de gameplay se ha movido o modificado; no se declara todavía una compilación validada.
+**Estado real:** rama de trabajo y PR en borrador. Se realizó una primera migración pequeña de identidad del servidor mediante un puente de compatibilidad; no se ha cambiado la lógica del GM. La compilación y las pruebas funcionales siguen pendientes.
